@@ -17,6 +17,10 @@ server.on('error', error=> {
     console.log(`Server error: ${error}`);
 });
 
+app.get('/', (req, res) => {   
+    res.send(<h1>Bienvenidos al server</h1>);
+});
+
 app.get('/productos', async (req, res) => {
     const productos = await contenedor.getAll()
     res.send(productos);
